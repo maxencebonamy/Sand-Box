@@ -21,10 +21,8 @@ int main() {
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            if (event.type == sf::Event::Closed) window.close();
         }
-
 
         grid.update();
 
@@ -42,7 +40,7 @@ int main() {
             }
         }
 
-        window.clear(WINDOW_COLOR);
+        window.clear(VOID.getColor());
 
         grid.display(window);
 

@@ -1,11 +1,11 @@
 #include "element.h"
 
 
-Element::Element(std::string name, sf::Keyboard::Key key, std::vector<sf::Color> colors, State state) {
+Element::Element(std::string name, sf::Keyboard::Key key, State state, std::vector<sf::Color> colors) {
     this->name = name;
     this->key = key;
-    this->colors = colors;
     this->state = state;
+    this->colors = colors;
 }
 
 
@@ -13,7 +13,7 @@ std::string Element::getName() {
     return name;
 }
 
-sf::Color Element::getColor() {
+sf::Color Element::getColor() const {
     int n = rand() % colors.size();
     return colors[n];
 }

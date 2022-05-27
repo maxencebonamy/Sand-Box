@@ -7,6 +7,7 @@
 #include "config.h"
 #include "iostream"
 #include "assert.h"
+#include "algorithm"
 
 
 class Grid {
@@ -20,8 +21,12 @@ public:
     void setElement(sf::Vector2i position, Element newElement);
 
     bool hasNeighbor(sf::Vector2i position, Element element);
+    bool hasOtherNeighbor(sf::Vector2i position, Element element);
+
     bool canMove(sf::Vector2i from, sf::Vector2i to);
     bool move(sf::Vector2i from, sf::Vector2i to);
+
+    std::vector<sf::Vector2i> shufflePositions(std::vector<sf::Vector2i> positions);
 
 private:
     sf::Vector2f window_size = WINDOW_SIZE;
