@@ -4,10 +4,11 @@
 #include "SFML/Graphics.hpp"
 
 const sf::Vector2f WINDOW_SIZE(1280, 720);
-const sf::Color WINDOW_COLOR(13, 22, 11);
+const sf::Color WINDOW_COLOR(12, 15, 10);
 const std::string WINDOW_TITLE = "Sand Box";
+const int WINDOW_FPS = 120;
 
 const float CELL_SIZE = 10;
-const int BRUSH_RADIUS = 2;
+const int BRUSH_RADIUS = 8;
 
 #endif
