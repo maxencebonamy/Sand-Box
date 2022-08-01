@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(SandBox)
 
-file(GLOB PROJ_SRC
+file(GLOB_RECURSE PROJ_SRC
     "sources/*.cpp"
     "includes/*.h"
 )

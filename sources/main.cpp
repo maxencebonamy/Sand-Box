@@ -1,48 +1,44 @@
-#include <iostream>
-#include "SFML/Graphics.hpp"
-#include "config.h"
-#include <grid.h>
+#include "display/grid.h"
+#include "display/hotBar.h"
 
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(WINDOW_SIZE.x, WINDOW_SIZE.y), WINDOW_TITLE, sf::Style::Titlebar | sf::Style::Close);
+
+    sf::VideoMode videoMode { (unsigned int)WINDOW_SIZE.getX(), (unsigned int)WINDOW_SIZE.getY() };
+    sf::RenderWindow window(videoMode, WINDOW_TITLE, sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(WINDOW_FPS);
 
     sf::Image icon;
-    icon.loadFromFile("assets/icon.png");
+    icon.loadFromFile("dependencies/assets/icon.png");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-    sf::Vector2i mouse_position;
+    HotBar hotBar;
+    Grid grid { hotBar.getElement() };
     sf::Mouse mouse;
 
-    Grid grid;
-    Element current_element = SAND;
+    Vector2 mousePosition;
+
+    window.display();
 
     while (window.isOpen()) {
+        mousePosition = { (float)mouse.getPosition(window).x, (float)mouse.getPosition(window).y };
+
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) window.close();
-        }
-
-        grid.update();
-
-        mouse_position = mouse.getPosition(window);
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-            grid.setElement(mouse_position, current_element);
-        }
-        else {
-            for (Element element: ELEMENTS) {
-                if (sf::Keyboard::isKeyPressed(element.getKey()) && current_element != element) {
-                    current_element = element;
-                    std::cout << element.getName() << std::endl;
-                    break;
-                }
+            else {
+                hotBar.updateEvents(event, mousePosition);
+                if (hotBar.hasBeenUpdated()) grid.setElement(hotBar.getElement());
+                else grid.updateEvents(event, mousePosition);
             }
         }
 
-        window.clear(VOID.getColor());
+        grid.updateSimulation();
+
+        window.clear();
 
         grid.display(window);
+        hotBar.display(window);
 
         window.display();
     }

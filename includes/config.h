@@ -1,13 +1,18 @@
 #ifndef SANDBOX_CONFIG_H
 #define SANDBOX_CONFIG_H
 
-#include "SFML/Graphics.hpp"
+#include "utils/vector2.h"
+#include <vector>
+#include <iostream>
 
-const sf::Vector2f WINDOW_SIZE(1280, 720);
-const std::string WINDOW_TITLE = "Sand Box";
-const int WINDOW_FPS = 120;
+extern const std::string WINDOW_TITLE;
+extern const int WINDOW_FPS;
 
-const float CELL_SIZE = 10;
-const int BRUSH_RADIUS = 8;
+extern const Vector2 GRID_SIZE;
+
+extern const float CELL_SIZE;
+extern const Vector2 WINDOW_SIZE;
+
+extern const sf::Color BACKGROUND_COLOR;
 
 #endif
