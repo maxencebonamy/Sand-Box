@@ -17,3 +17,7 @@ void Solid::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& 
 //        setNextPosition(testPosition);
 //    }
 }
+
+int Solid::getWeight() const {
+    return 0;
+}

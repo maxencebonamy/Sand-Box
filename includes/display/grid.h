@@ -27,8 +27,6 @@ private:
 
     void _swap(Vector2 positionA, Vector2 positionB);
 
-    const Vector2& _size { GRID_SIZE };
-
     sf::Texture _texture;
     std::vector<sf::Uint8> _pixels;
     sf::Sprite _sprite;

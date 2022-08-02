@@ -15,6 +15,7 @@ public:
     std::unique_ptr<Element> getNew(Vector2 position) override;
 
     std::string getName() const override;
+    int getWeight() const override;
 
 
 };

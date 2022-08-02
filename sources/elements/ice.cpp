@@ -1,6 +1,11 @@
 #include "elements/ice.h"
 
-Ice::Ice(Vector2 position) : Solid({ 148, 247, 255 }, position) {}
+std::vector<sf::Color> iceColors {
+    {192, 247, 255},
+    {148, 247, 255}
+};
+
+Ice::Ice(Vector2 position) : Solid(randVector(iceColors), position) {}
 
 std::unique_ptr<Element> Ice::getNew(Vector2 position) { return std::make_unique<Ice>(position); }
 

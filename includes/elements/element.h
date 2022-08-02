@@ -19,8 +19,10 @@ public:
     virtual Vector2 getPosition() const;
 
     virtual std::string getName() const = 0;
+    virtual int getWeight() const = 0;
 
     virtual void setNextPosition(Vector2 position);
+    virtual Vector2 getNextPosition() const;
 
     virtual bool canMove(const std::vector<std::vector<std::unique_ptr<Element>>>& map, Vector2 position) = 0;
 
@@ -29,14 +31,22 @@ public:
     virtual void testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) = 0;
 
     bool hasMoved() const;
+    bool hasChanged() const;
+
+    void setNextElement(std::unique_ptr<Element> nextElement);
 
     virtual std::unique_ptr<Element> getNew(Vector2 position) = 0;
+
+    virtual std::unique_ptr<Element> getNextElement();
 
 protected:
 
     bool _isInBounds(Vector2 position);
 
     bool _hasMoved { false };
+    bool _hasChanged { false };
+
+    std::unique_ptr<Element> _nextElement;
 
     sf::Color _color;
     Vector2 _position;

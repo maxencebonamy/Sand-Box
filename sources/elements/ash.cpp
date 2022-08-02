@@ -1,6 +1,14 @@
 #include "elements/ash.h"
 
-Ash::Ash(Vector2 position) : Dust({ 208, 198, 198 }, position) {}
+std::vector<sf::Color> ashColors {
+        {208,198,198},
+        {195,185,185},
+        {180,168,168},
+        {169,157,157},
+        {159,147,147}
+};
+
+Ash::Ash(Vector2 position) : Dust(randVector(ashColors), position) {}
 
 std::unique_ptr<Element> Ash::getNew(Vector2 position) { return std::make_unique<Ash>(position); }
 

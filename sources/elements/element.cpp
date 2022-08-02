@@ -13,7 +13,10 @@ void Element::setNextPosition(Vector2 position) {
 }
 
 void Element::update() {
-    if (_position != _nextPosition) _position = _nextPosition;
+    if (_hasMoved) {
+        _position = _nextPosition;
+        _hasMoved = false;
+    }
 }
 
 bool Element::_isInBounds(Vector2 position) {
@@ -22,4 +25,23 @@ bool Element::_isInBounds(Vector2 position) {
 }
 
 bool Element::hasMoved() const { return _hasMoved; }
+
+Vector2 Element::getNextPosition() const {
+    return _nextPosition;
+}
+
+bool Element::hasChanged() const {
+    return _hasChanged;
+}
+
+std::unique_ptr<Element> Element::getNextElement() {
+    return std::move(_nextElement);
+}
+
+void Element::setNextElement(std::unique_ptr<Element> nextElement) {
+    if (!_hasChanged) {
+        _hasChanged = true;
+        _nextElement = std::move(nextElement);
+    }
+}
 
