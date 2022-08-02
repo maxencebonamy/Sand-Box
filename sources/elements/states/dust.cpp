@@ -3,7 +3,7 @@
 
 Dust::Dust(sf::Color color, Vector2 position) : Element(color, position) {}
 
-bool Dust::canMove(const std::vector<std::vector<std::unique_ptr<Element>>>& map, Vector2 position) {
+bool Dust::canMove(const Map& map, Vector2 position) {
     return false;
 }
 

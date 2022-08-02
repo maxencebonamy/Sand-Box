@@ -12,11 +12,11 @@ std::vector<sf::Color> fireColors {
 
 Fire::Fire(Vector2 position) : Element(randVector(fireColors), position) {}
 
-bool Fire::canMove(const std::vector<std::vector<std::unique_ptr<Element>>>& map, Vector2 position) {
+bool Fire::canMove(const Map& map, Vector2 position) {
     return false;
 }
 
-void Fire::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) {
+void Fire::testMoves(const Map& map) {
 //    for (auto& position : _getNeighbors(map, "wood")) {
 //        float x { _position.getX() }, y { _position.getY() };
 //        map[x][y]->setNextElement(getNew(map[x][y]->getPosition()));

@@ -12,7 +12,7 @@ std::unique_ptr<Element> Acid::getNew(Vector2 position) { return std::make_uniqu
 
 std::string Acid::getName() const { return "acid"; }
 
-void Acid::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) {
+void Acid::testMoves(const Map& map) {
     Vector2 targetPosition { _position + Vector2(randInt(-3, 3), randInt(0, 1)) };
     float x { targetPosition.getX() }, y { targetPosition.getY() };
 

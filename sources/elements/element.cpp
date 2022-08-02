@@ -45,7 +45,7 @@ void Element::setNextElement(std::unique_ptr<Element> nextElement) {
     }
 }
 
-std::vector<Vector2> Element::_getNeighbors(const std::vector<std::vector<std::unique_ptr<Element>>>& map, const std::string& name) const {
+std::vector<Vector2> Element::_getNeighbors(const Map& map, const std::string& name) const {
     float x { _position.getX() }, y { _position.getY() };
     std::vector<Vector2> result;
 

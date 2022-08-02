@@ -15,7 +15,7 @@ public:
 
     std::string getName() const override;
 
-    void testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) override;
+    void testMoves(const Map& map) override;
 
 };
 

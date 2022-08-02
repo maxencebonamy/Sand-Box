@@ -3,11 +3,11 @@
 
 Gaz::Gaz(sf::Color color, Vector2 position) : Element(color, position) {}
 
-bool Gaz::canMove(const std::vector<std::vector<std::unique_ptr<Element>>>& map, Vector2 position) {
+bool Gaz::canMove(const Map& map, Vector2 position) {
     return false;
 }
 
-void Gaz::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) {
+void Gaz::testMoves(const Map& map) {
     Vector2 targetPosition { _position + Vector2(randInt(-3, 3), randInt(-1, -3)) };
     float x { targetPosition.getX() }, y { targetPosition.getY() };
 

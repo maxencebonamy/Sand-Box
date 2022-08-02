@@ -12,7 +12,7 @@ std::unique_ptr<Element> Ice::getNew(Vector2 position) { return std::make_unique
 
 std::string Ice::getName() const { return "ice"; }
 
-void Ice::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) {
+void Ice::testMoves(const Map& map) {
     if (randInt(0, 1000) == 0) setNextElement(std::make_unique<Water>(_position));
 
     Solid::testMoves(map);

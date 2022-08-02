@@ -10,6 +10,8 @@ class Element {
 
 public:
 
+    typedef std::vector<std::vector<std::unique_ptr<Element>>> Map;
+
     Element(sf::Color color, Vector2 position={});
 
     virtual ~Element() = default;
@@ -24,11 +26,11 @@ public:
     virtual void setNextPosition(Vector2 position);
     virtual Vector2 getNextPosition() const;
 
-    virtual bool canMove(const std::vector<std::vector<std::unique_ptr<Element>>>& map, Vector2 position) = 0;
+    virtual bool canMove(const Map& map, Vector2 position) = 0;
 
     virtual void update();
 
-    virtual void testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) = 0;
+    virtual void testMoves(const Map& map) = 0;
 
     bool hasMoved() const;
     bool hasChanged() const;
@@ -43,7 +45,7 @@ protected:
 
     bool _isInBounds(Vector2 position);
 
-    std::vector<Vector2> _getNeighbors(const std::vector<std::vector<std::unique_ptr<Element>>>& map, const std::string& name) const;
+    std::vector<Vector2> _getNeighbors(const Map& map, const std::string& name) const;
 
     bool _hasMoved { false };
     bool _hasChanged { false };

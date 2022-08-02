@@ -37,7 +37,7 @@ private:
 
     std::shared_ptr<Element> _currentElement;
 
-    std::vector<std::vector<std::unique_ptr<Element>>> _map;
+    Element::Map _map;
 };
 
 #endif
