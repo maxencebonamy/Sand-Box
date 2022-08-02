@@ -19,7 +19,7 @@ void Element::update() {
     }
 }
 
-bool Element::_isInBounds(Vector2 position) {
+bool Element::_isInBounds(Vector2 position) const {
     return position.getX() >= 0 && position.getX() < GRID_SIZE.getX() &&
            position.getY() >= 0 && position.getY() < GRID_SIZE.getY();
 }
@@ -51,7 +51,9 @@ std::vector<Vector2> Element::_getNeighbors(const Map& map, const std::string& n
 
     for (int i { -1 }; i <= 1; ++i) {
         for (int j { -1 }; j <= 1; ++j) {
-            if ((i != 0 || j != 0) && map[x + i][y + j]->getName() == name) result.push_back({ x + i, y + j });
+            Vector2 targetPosition { _position + Vector2(i, j) };
+            if (targetPosition != _position && _isInBounds(targetPosition) && map[x + i][y + j]->getName() == name)
+                result.push_back(targetPosition);
         }
     }
 

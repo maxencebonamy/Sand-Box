@@ -15,6 +15,8 @@ public:
 
     std::string getName() const override;
 
+    void testMoves(const Map& map) override;
+
 };
 
 

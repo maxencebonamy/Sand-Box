@@ -13,11 +13,21 @@ std::unique_ptr<Element> Acid::getNew(Vector2 position) { return std::make_uniqu
 std::string Acid::getName() const { return "acid"; }
 
 void Acid::testMoves(const Map& map) {
-    Vector2 targetPosition { _position + Vector2(randInt(-3, 3), randInt(0, 1)) };
-    float x { targetPosition.getX() }, y { targetPosition.getY() };
+    auto testMove { [this, &map](Vector2 targetPosition) -> bool {
+        float x { targetPosition.getX() }, y { targetPosition.getY() };
 
-    if (_isInBounds(targetPosition) && map[x][y]->getName() != "acid" && !map[x][y]->hasChanged()) {
-        setNextElement(std::make_unique<Void>(_position));
-        map[x][y]->setNextElement(getNew(map[x][y]->getPosition()));
-    }
+        if (_isInBounds(targetPosition) && map[x][y]->getName() != "acid" && !map[x][y]->hasChanged()) {
+            if (map[x][y]->getName() == "void" || !randInt(0, 99)) {
+                setNextElement(std::make_unique<Void>(_position));
+                map[x][y]->setNextElement(getNew(map[x][y]->getPosition()));
+                return true;
+            }
+        }
+
+        return false;
+    } };
+
+    if (testMove(_position + Vector2(0, 1))) {}
+    else if (testMove(_position + Vector2(randInt(-2, 2), 1))) {}
+    else if (testMove(_position + Vector2(randInt(-5, 5), 0))) {}
 }

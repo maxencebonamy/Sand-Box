@@ -22,9 +22,6 @@ void Liquid::testMoves(const Map& map) {
     if (testMove(_position + Vector2(0, 1))) {}
     else if (testMove(_position + Vector2(randInt(-2, 2), 1))) {}
     else if (testMove(_position + Vector2(randInt(-5, 5), 0))) {}
-
-//    Vector2 targetPosition { _position + Vector2(randInt(-5, 5), randInt(0, 1)) };
-
 }
 
 int Liquid::getWeight() const {

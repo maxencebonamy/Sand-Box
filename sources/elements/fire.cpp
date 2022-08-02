@@ -1,6 +1,8 @@
 #include "elements/fire.h"
 #include "elements/void.h"
 #include "elements/steam.h"
+#include "elements/ash.h"
+#include "elements/water.h"
 
 std::vector<sf::Color> fireColors {
         {255,0,0},
@@ -17,15 +19,34 @@ bool Fire::canMove(const Map& map, Vector2 position) {
 }
 
 void Fire::testMoves(const Map& map) {
-//    for (auto& position : _getNeighbors(map, "wood")) {
-//        float x { _position.getX() }, y { _position.getY() };
-//        map[x][y]->setNextElement(getNew(map[x][y]->getPosition()));
-//    }
-//    for (auto& position : _getNeighbors(map, "water")) {
-//        float x { _position.getX() }, y { _position.getY() };
-//        map[x][y]->setNextElement(std::make_unique<Steam>(map[x][y]->getPosition()));
-//    }
-    setNextElement(std::make_unique<Void>(_position));
+    for (auto& neighbors : { _getNeighbors(map, "ice"), _getNeighbors(map, "snow") }) {
+        for (auto& position : neighbors) {
+            if (!randInt(0, 14)) {
+                float x { position.getX() }, y { position.getY() };
+                map[x][y]->setNextElement(std::make_unique<Water>(map[x][y]->getPosition()));
+            }
+        }
+    }
+
+    for (auto& position : _getNeighbors(map, "water")) {
+        if (!randInt(0, 14)) {
+            float x { position.getX() }, y { position.getY() };
+            map[x][y]->setNextElement(std::make_unique<Steam>(map[x][y]->getPosition()));
+        }
+    }
+
+    std::vector<Vector2> woodNeighbors { _getNeighbors(map, "wood") };
+
+    if (woodNeighbors.empty() && !randInt(0, 4)) setNextElement(std::make_unique<Void>(_position));
+
+    for (auto& position : woodNeighbors) {
+        if (!randInt(0, 14)) {
+            float x { position.getX() }, y { position.getY() };
+            if (randInt(0, 9)) setNextElement(std::make_unique<Void>(_position));
+            else setNextElement(std::make_unique<Ash>(_position));
+            map[x][y]->setNextElement(std::make_unique<Fire>(map[x][y]->getPosition()));
+        }
+    }
 }
 
 std::unique_ptr<Element> Fire::getNew(Vector2 position) { return std::make_unique<Fire>(position); }

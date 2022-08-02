@@ -43,7 +43,7 @@ public:
 
 protected:
 
-    bool _isInBounds(Vector2 position);
+    bool _isInBounds(Vector2 position) const;
 
     std::vector<Vector2> _getNeighbors(const Map& map, const std::string& name) const;
 
