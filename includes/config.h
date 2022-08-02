@@ -13,6 +13,4 @@ extern const Vector2 GRID_SIZE;
 extern const float CELL_SIZE;
 extern const Vector2 WINDOW_SIZE;
 
-extern const sf::Color BACKGROUND_COLOR;
-
 #endif

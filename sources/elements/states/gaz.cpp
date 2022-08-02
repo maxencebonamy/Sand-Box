@@ -8,15 +8,11 @@ bool Gaz::canMove(const std::vector<std::vector<std::unique_ptr<Element>>>& map,
 }
 
 void Gaz::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& map) {
-    if (randInt(0, 1000) == 0) {
-        setNextElement(std::make_unique<Water>(_position));
-        return;
-    }
-
     Vector2 targetPosition { _position + Vector2(randInt(-3, 3), randInt(-1, -3)) };
     float x { targetPosition.getX() }, y { targetPosition.getY() };
 
-    if (_isInBounds(targetPosition) && map[x][y]->getName() == "void") {
+    if (_isInBounds(targetPosition) && !map[x][y]->hasChanged() &&
+        (map[x][y]->getName() == "void" || map[x][y]->getName() == "water")) {
         setNextElement(map[x][y]->getNew(_position));
         map[x][y]->setNextElement(getNew(map[x][y]->getPosition()));
     }

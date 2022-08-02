@@ -1,7 +1,11 @@
 #include "elements/sand.h"
 
 std::vector<sf::Color> sandColors {
-    { 242, 210, 169 }
+    { 246, 215, 176 },
+    { 242, 210, 169 },
+    { 236, 204, 162 },
+    { 231, 196, 150 },
+    { 225, 191, 146 }
 };
 
 Sand::Sand(Vector2 position) : Dust(randVector(sandColors), position) {}

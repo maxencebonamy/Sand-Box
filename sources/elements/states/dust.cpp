@@ -11,7 +11,8 @@ void Dust::testMoves(const std::vector<std::vector<std::unique_ptr<Element>>>& m
     Vector2 targetPosition { _position + Vector2(randInt(-1, 1), randInt(1, 3)) };
     float x { targetPosition.getX() }, y { targetPosition.getY() };
 
-    if (_isInBounds(targetPosition) && (map[x][y]->getName() == "void" || map[x][y]->getName() == "water")) {
+    if (_isInBounds(targetPosition) && !map[x][y]->hasChanged() &&
+        (map[x][y]->getName() == "void" || map[x][y]->getName() == "water" || map[x][y]->getName() == "acid")) {
         setNextElement(map[x][y]->getNew(_position));
         map[x][y]->setNextElement(getNew(map[x][y]->getPosition()));
     }

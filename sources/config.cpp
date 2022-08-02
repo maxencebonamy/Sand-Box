@@ -11,5 +11,3 @@ const Vector2 WINDOW_SIZE { 1280, 720 };
 const float CELL_SIZE { 5 };
 // The dimensions of the grid (in pixels)
 const Vector2 GRID_SIZE { WINDOW_SIZE / CELL_SIZE };
-
-const sf::Color BACKGROUND_COLOR { 12, 15, 10 };

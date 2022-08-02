@@ -43,6 +43,8 @@ protected:
 
     bool _isInBounds(Vector2 position);
 
+    std::vector<Vector2> _getNeighbors(const std::vector<std::vector<std::unique_ptr<Element>>>& map, const std::string& name) const;
+
     bool _hasMoved { false };
     bool _hasChanged { false };
 

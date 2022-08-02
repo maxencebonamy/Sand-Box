@@ -45,3 +45,16 @@ void Element::setNextElement(std::unique_ptr<Element> nextElement) {
     }
 }
 
+std::vector<Vector2> Element::_getNeighbors(const std::vector<std::vector<std::unique_ptr<Element>>>& map, const std::string& name) const {
+    float x { _position.getX() }, y { _position.getY() };
+    std::vector<Vector2> result;
+
+    for (int i { -1 }; i <= 1; ++i) {
+        for (int j { -1 }; j <= 1; ++j) {
+            if ((i != 0 || j != 0) && map[x + i][y + j]->getName() == name) result.push_back({ x + i, y + j });
+        }
+    }
+
+    return result;
+}
+

@@ -31,7 +31,7 @@ private:
     std::vector<sf::Uint8> _pixels;
     sf::Sprite _sprite;
 
-    const int RADIUS { 10 };
+    const int RADIUS { 5 };
 
     bool _isMouseClicking { false };
 

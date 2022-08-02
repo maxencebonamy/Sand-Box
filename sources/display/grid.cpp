@@ -73,9 +73,9 @@ void Grid::updateEvents(const sf::Event& event, const Vector2& mousePosition) {
         for (int i { -RADIUS }; i <= RADIUS; ++i ) {
             for (int j { -RADIUS }; j <= RADIUS; ++j) {
                 Vector2 dPos { static_cast<float>(i), static_cast<float>(j) };
-                Vector2 newPos { mousePos.getX() + i, mousePos.getY() + j };
-                if (_isInBounds(mousePos + dPos) && dPos.getNorm() <= RADIUS &&
-                    (_map[newPos.getX()][newPos.getY()]->getName() == "void" || _currentElement->getName() == "void")) {
+                Vector2 newPos { mousePos + dPos };
+                if (_isInBounds(newPos) && dPos.getNorm() <= RADIUS) {
+                    if (_map[newPos.getX()][newPos.getY()]->getName() != "void" && _currentElement->getName() == "fire") continue;
                     _map[newPos.getX()][newPos.getY()] = _currentElement->getNew(newPos);
                 }
             }
