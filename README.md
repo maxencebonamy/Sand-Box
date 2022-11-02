@@ -1,5 +1,5 @@
 # Sand-Box
-![Language](https://img.shields.io/badge/Language-C%2B%2B-purple)
+![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)
 ![Language](https://img.shields.io/badge/Library-SFML-green)
 ![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
