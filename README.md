@@ -9,5 +9,5 @@
 ## Dependencies
 ![image](https://user-images.githubusercontent.com/66129931/199499321-82bb5139-ae4e-4721-a7a4-a77a5c67bcef.png)
 
-## Screenshot
-![image](https://user-images.githubusercontent.com/66129931/182410282-1c1a521e-5ff9-4c7e-9fd8-ad27b6900772.png)
+## Example
+![sand_box](https://user-images.githubusercontent.com/66129931/199499460-648a9fa6-0fc4-4c1c-bfdc-8c1db0809e06.gif)
