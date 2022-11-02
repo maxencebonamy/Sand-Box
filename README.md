@@ -1,4 +1,7 @@
 # Sand-Box
+![Language](https://img.shields.io/badge/Language-C%2B%2B-purple)
+![Language](https://img.shields.io/badge/Library-SFML-green)
+![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
 ## Description
 ![image](https://user-images.githubusercontent.com/66129931/199498747-27950043-0025-4766-82a5-5e88ce042553.png)
