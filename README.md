@@ -1,3 +1,7 @@
+<p align="center">
+	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/Sand_Box.png" width="100%" alt="Description">
+</p>
+
 # Sand-Box
 ![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)
 ![Language](https://img.shields.io/badge/Library-SFML-green)
