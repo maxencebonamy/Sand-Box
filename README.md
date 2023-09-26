@@ -5,7 +5,7 @@
 ![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)
 ![Language](https://img.shields.io/badge/Library-SFML-green)
 ![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
-![Lines of code](https://img.shields.io/tokei/lines/github/maxencebonamy/https%3A%2F%2Fgithub.com%2Fmaxencebonamy%2FSand-Box)
+![Lines of code](https://img.shields.io/tokei/lines/github/maxencebonamy/Sand-Box)
 
 
 <p align="center">
