@@ -2,10 +2,11 @@
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/Sand_Box.png" width="100%" alt="Sand Box">
 </p>
 
-# Sand-Box
 ![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)
 ![Language](https://img.shields.io/badge/Library-SFML-green)
 ![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
+![Lines of code](https://img.shields.io/tokei/lines/github/maxencebonamy/https%3A%2F%2Fgithub.com%2Fmaxencebonamy%2FSand-Box)
+
 
 <p align="center">
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/1_Description.png" width="100%" alt="Description">
