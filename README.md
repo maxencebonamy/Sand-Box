@@ -16,5 +16,5 @@
 </p>
 
 <p align="center">
-	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/Examples.png" width="100%" alt="Examples">
+	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/4_Examples.png" width="100%" alt="Examples">
 </p>
