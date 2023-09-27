@@ -48,7 +48,7 @@ This software is a physical simulation. You can arrange different physical eleme
 
 ### Compile:
 
-*Prerequisites :*
+*Prerequisites:*
 - [x] *Git must be installed on your computer. If not, <a href="https://git-scm.com/downloads" target="_blank">click here.</a>*
 - [x] *Xmake must be installed on your computer, if not, <a href="https://xmake.io/#/getting_started?id=installation" target="_blank">click here.</a>*
 <br>
