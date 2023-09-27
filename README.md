@@ -80,7 +80,7 @@ xmake run
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/3_Features.png" width="100%" alt="Features">
 </p>
 
-### The actions you can perform in the software:
+### Actions you can perform in the software:
 - Hold down the left click and move your mouse to place elements on the window.
 - Right-click to show or hide the selection bar for the current element.
 - If the element selection bar is displayed, simply left-click on an element to select it.
