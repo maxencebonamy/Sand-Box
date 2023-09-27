@@ -2,6 +2,8 @@
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/Sand_Box.png" width="100%" alt="Sand Box">
 </p>
 
+https://github.com/maxencebonamy/Sand-Box/assets/66129931/98f83fe8-437f-4502-9f61-f1b0365b798f
+
 <p align="center">
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/1_Description.png" width="100%" alt="Description">
 </p>
@@ -79,13 +81,4 @@ xmake run
 - Hold down the left click and move your mouse to place elements on the window.
 - Right-click to show or hide the selection bar for the current element.
 - If the element selection bar is displayed, simply left-click on an element to select it.
-
-<br>
-
-<p align="center">
-	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/4_Examples.png" width="100%" alt="Examples">
-</p>
-
-https://github.com/maxencebonamy/Sand-Box/assets/66129931/98f83fe8-437f-4502-9f61-f1b0365b798f
-
 
