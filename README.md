@@ -48,17 +48,27 @@ This software is a physical simulation. You can arrange different physical eleme
 
 *Prerequisites :*
 - [ ] *Git must be installed on your computer. If not, <a href="https://git-scm.com/downloads" target="_blank">click here.</a>*
-- [ ] *Xmake must be installed on your computer, if not, <a href="https://www.python.org/downloads/" target="_blank">click here.</a>*
+- [ ] *Xmake must be installed on your computer, if not, <a href="https://xmake.io/#/getting_started?id=installation" target="_blank">click here.</a>*
 <br>
 
 1. **Clone** the repository on your computer. To do this, open a terminal in the folder of your choice and run the following command:
 ```
-git clone https://github.com/maxencebonamy/Minecraft-Survival
+git clone https://github.com/maxencebonamy/Sand-Box
 ```
 
 2. **Navigate** inside the folder you've just cloned with the following command:
 ```
-cd Minecraft-Survival
+cd Sand-Box
+```
+
+3. **Compile** the project with the following command:
+```
+xmake
+```
+
+4. **Run** the executable with this command:
+```
+xmake run
 ```
 
 <br>
@@ -67,9 +77,7 @@ cd Minecraft-Survival
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/3_Features.png" width="100%" alt="Features">
 </p>
 
-### Parameters that can be modified in the game :
-- Game language: English and French are available.
-- The number of frames per second: you can choose between 60 and 120.
-- Music can be switched on or off.
-- Sound effects can be activated or deactivated.
-
+### The actions you can perform in the software:
+- Hold down the left click and move your mouse to place elements on the window.
+- Right-click to show or hide the selection bar for the current element.
+- If the element selection bar is displayed, simply left-click on an element to select it.
