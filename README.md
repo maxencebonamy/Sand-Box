@@ -8,11 +8,11 @@
 
 This software is a physical simulation. You can arrange different physical elements anywhere in the window, and they will evolve with each other according to the laws of physics.
 
-<p verticalAlign="middle"><img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/void.png" alt="air" height="24px"> **Air:** the basic element, used above all to "clear" the screen if you've placed too many elements. Be careful: if you place air in water, the air will obviously rise to the surface.</p>
+<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/void.png" alt="air" height="24px" align="center"> **Air:** the basic element, used above all to "clear" the screen if you've placed too many elements. Be careful: if you place air in water, the air will obviously rise to the surface.
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/sand.png" alt="sand" height="24px"> **Sand:** evolves simply like powder, so is subject to gravity and forms hills.
+<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/sand.png" alt="sand" height="24px" align="middle"> **Sand:** evolves simply like powder, so is subject to gravity and forms hills.
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/water.png" alt="water" height="24px"> **Water:** evolves simply like a liquid, so is also subject to gravity, but spreads wherever possible.
+<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/water.png" alt="water" height="24px" align="top"> **Water:** evolves simply like a liquid, so is also subject to gravity, but spreads wherever possible.
 
 <img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/steam.png" alt="steam" height="24px"> **Steam:** evolves simply like a gas, but rises as high as possible because steam is lighter than air. Steam can return to its liquid state and turn back into water after a while, which is similar to rain.
 
