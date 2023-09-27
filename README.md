@@ -30,17 +30,19 @@ This software is a physical simulation. You can arrange different physical eleme
 
 <img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/ice.png" alt="ice" height="24px" align="top"> **Ice:** like wood or stone, ice is not subject to gravity. And like snow, it melts after a certain time, turning into water.
 
+<br>
+
 <p align="center">
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/2_Get_Started.png" width="100%" alt="Get Started">
 </p>
 
-### To launch the software:
+### Launch the software:
 
 1. Click on the <a href="https://github.com/maxencebonamy/Sand-Box/releases" target="_blank">Releases</a> button on the right and select the **latest version**.
 2. Download the **.zip** archive and extract the files.
 3. Run the **.exe** executable.
 
-### To compile:
+### Compile:
 
 *Prerequisites :*
 - [ ] *Git must be installed on your computer. If not, <a href="https://git-scm.com/downloads" target="_blank">click here.</a>*
@@ -67,10 +69,23 @@ xmake
 xmake run
 ```
 
+<br>
+
 <p align="center">
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/3_Features.png" width="100%" alt="Features">
 </p>
 
+# The actions you can perform in the software:
+- Hold down the left click and move your mouse to place elements on the window.
+- Right-click to show or hide the selection bar for the current element.
+- If the element selection bar is displayed, simply left-click on an element to select it.
+
+<br>
+
 <p align="center">
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/4_Examples.png" width="100%" alt="Examples">
 </p>
+
+https://github.com/maxencebonamy/Sand-Box/assets/66129931/98f83fe8-437f-4502-9f61-f1b0365b798f
+
+
