@@ -15,7 +15,7 @@ This software is a physical simulation. You can arrange different physical eleme
 - [ ] **Fire:** heats or even burns an element. Placed next to wood, it ignites the latter. Placed near snow or ice, it will transform it into water, and will also transform the latter into steam.
 - [ ] **Ash:** when wood burns, it turns to ash, which falls like sand, thus acting like powder.
 - [ ] **Stone:** like wood, it doesn't fall, and you have to imagine that it's "fixed". There's nothing special about stone, except that it doesn't burn.
-- [ ] **Acid:** dissolves any element, such as stone. Caution: when acid touches water, it dissolves.
+<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/acid.png" alt="acid" height="24px"> - [ ] **Acid:** dissolves any element, such as stone. Caution: when acid touches water, it dissolves.
 - [ ] **Snow:** acts like a classic powder, like sand or ashes. Beware, however, that snow sometimes transforms into water after a certain time, as the temperature of the simulation is considered to be room temperature.
 - [ ] **Ice:** like wood or stone, ice is not subject to gravity. And like snow, it melts after a certain time, turning into water.
 
