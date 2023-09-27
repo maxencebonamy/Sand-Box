@@ -8,9 +8,9 @@
 
 This software is a physical simulation. You can arrange different physical elements anywhere in the window, and they will evolve with each other according to the laws of physics.
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/void.png" alt="air" height="24px" align="center"> **Air:** the basic element, used above all to "clear" the screen if you've placed too many elements. Be careful: if you place air in water, the air will obviously rise to the surface.
+<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/void.png" alt="air" height="24px" align="top"> **Air:** the basic element, used above all to "clear" the screen if you've placed too many elements. Be careful: if you place air in water, the air will obviously rise to the surface.
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/sand.png" alt="sand" height="24px" align="middle"> **Sand:** evolves simply like powder, so is subject to gravity and forms hills.
+<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/sand.png" alt="sand" height="24px" align="top"> **Sand:** evolves simply like powder, so is subject to gravity and forms hills.
 
 <img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/water.png" alt="water" height="24px" align="top"> **Water:** evolves simply like a liquid, so is also subject to gravity, but spreads wherever possible.
 
