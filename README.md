@@ -4,6 +4,8 @@
 
 https://github.com/maxencebonamy/Sand-Box/assets/66129931/98f83fe8-437f-4502-9f61-f1b0365b798f
 
+<br>
+
 <p align="center">
 	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/1_Description.png" width="100%" alt="Description">
 </p>
