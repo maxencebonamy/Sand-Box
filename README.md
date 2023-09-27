@@ -19,8 +19,8 @@
 ### To compile:
 
 *Prerequisites :*
-[] *Git must be installed on your computer. If not, <a href="https://git-scm.com/downloads" target="_blank">click here.</a>*
-[] *Xmake must be installed on your computer, if not, <a href="https://xmake.io/#/getting_started?id=installation" target="_blank">click here.</a>*
+- [ ] *Git must be installed on your computer. If not, <a href="https://git-scm.com/downloads" target="_blank">click here.</a>*
+- [ ] *Xmake must be installed on your computer, if not, <a href="https://xmake.io/#/getting_started?id=installation" target="_blank">click here.</a>*
 <br>
 1. **Clone** the repository on your computer. To do this, open a terminal in the folder of your choice and run the following command:
 ```
