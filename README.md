@@ -1,4 +1,4 @@
-# Sand-Box
+# Sand Box
 
 A falling-sand physics simulation.
 
@@ -6,7 +6,7 @@ Place elements such as sand, water, fire or acid anywhere in the window and watc
 
 ## Table of contents
 
-- [Sand-Box](#sand-box)
+- [Sand Box](#sand-box)
 	- [Table of contents](#table-of-contents)
 	- [How it works](#how-it-works)
 	- [Tech stack](#tech-stack)
