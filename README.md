@@ -1,86 +1,118 @@
-<p align="center">
-	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/Sand_Box.png" width="100%" alt="Sand Box">
-</p>
+# Sand-Box
 
-https://github.com/maxencebonamy/Sand-Box/assets/66129931/98f83fe8-437f-4502-9f61-f1b0365b798f
+A falling-sand physics simulation.
 
-<br>
+Place elements such as sand, water, fire or acid anywhere in the window and watch them interact. The project is written in C++ with SFML and targets anyone who wants a small sandbox to play with or a compact example of a cellular simulation.
 
-<p align="center">
-	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/1_Description.png" width="100%" alt="Description">
-</p>
+## Table of contents
 
-This software is a physical simulation. You can arrange different physical elements anywhere in the window, and they will evolve with each other according to the laws of physics.
+- [Sand-Box](#sand-box)
+	- [Table of contents](#table-of-contents)
+	- [How it works](#how-it-works)
+	- [Tech stack](#tech-stack)
+	- [Repository structure](#repository-structure)
+	- [Prerequisites](#prerequisites)
+	- [Installation](#installation)
+	- [Configuration](#configuration)
+	- [Running locally](#running-locally)
+	- [Useful scripts](#useful-scripts)
+	- [License](#license)
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/void.png" alt="air" height="24px" align="top"> **Air:** the basic element, used above all to "clear" the screen if you've placed too many elements. Be careful: if you place air in water, the air will obviously rise to the surface.
+## How it works
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/sand.png" alt="sand" height="24px" align="top"> **Sand:** evolves simply like powder, so is subject to gravity and forms hills.
+1. **Grid**: the window is split into square cells of 5 pixels. The 1600x900 window gives a 320x180 grid. Each cell holds one element.
+2. **Elements**: every element is a class in `src/elements`. Each one belongs to a state (solid, dust, liquid or gas) that defines how it moves, and adds its own interactions on top.
+3. **Simulation**: on every frame, the grid updates each cell. The window is capped at 120 frames per second.
+4. **Interactions**: elements react to their neighbors. Fire ignites wood and melts snow and ice, burning wood leaves ash, steam can condense back into water, snow and ice melt over time, and acid dissolves other elements.
+5. **Input**: hold the left mouse button to place the selected element. Right-click shows or hides the selection bar, and a left click on the bar selects an element.
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/water.png" alt="water" height="24px" align="top"> **Water:** evolves simply like a liquid, so is also subject to gravity, but spreads wherever possible.
+| Element | State | Behavior |
+| --- | --- | --- |
+| Air | Solid | Empty cell, used to erase |
+| Sand | Dust | Falls and forms hills |
+| Water | Liquid | Falls and spreads sideways |
+| Steam | Gas | Rises, can condense into water |
+| Wood | Solid | Fixed, burns |
+| Fire | Own class | Ignites wood, melts snow and ice into water, turns water into steam |
+| Ash | Dust | Left by burning wood, falls like sand |
+| Stone | Solid | Fixed, does not burn |
+| Acid | Liquid | Dissolves other elements, dissolves in water |
+| Snow | Dust | Falls, melts into water over time |
+| Ice | Solid | Fixed, melts into water over time |
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/steam.png" alt="steam" height="24px" align="top"> **Steam:** evolves simply like a gas, but rises as high as possible because steam is lighter than air. Steam can return to its liquid state and turn back into water after a while, which is similar to rain.
+## Tech stack
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/wood.png" alt="wood" height="24px" align="top"> **Wood:** here, the wood doesn't fall, which may seem odd, but you have to imagine that it's fixed in height. The wood burns and the fire spreads relatively quickly over it.
+| Layer | Technologies |
+| --- | --- |
+| Language | C++ |
+| Graphics and input | SFML |
+| Build | Xmake |
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/fire.png" alt="fire" height="24px" align="top"> **Fire:** heats or even burns an element. Placed next to wood, it ignites the latter. Placed near snow or ice, it will transform it into water, and will also transform the latter into steam.
+## Repository structure
 
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/ash.png" alt="ash" height="24px" align="top"> **Ash:** when wood burns, it turns to ash, which falls like sand, thus acting like powder.
-
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/stone.png" alt="stone" height="24px" align="top"> **Stone:** like wood, it doesn't fall, and you have to imagine that it's "fixed". There's nothing special about stone, except that it doesn't burn.
-
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/acid.png" alt="acid" height="24px" align="top"> **Acid:** dissolves any element, such as stone. Caution: when acid touches water, it dissolves.
-
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/snow.png" alt="snow" height="24px" align="top"> **Snow:** acts like a classic powder, like sand or ashes. Beware, however, that snow sometimes transforms into water after a certain time, as the temperature of the simulation is considered to be room temperature.
-
-<img src="https://github.com/maxencebonamy/Sand-Box/blob/main/assets/ice.png" alt="ice" height="24px" align="top"> **Ice:** like wood or stone, ice is not subject to gravity. And like snow, it melts after a certain time, turning into water.
-
-<br>
-
-<p align="center">
-	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/2_Get_Started.png" width="100%" alt="Get Started">
-</p>
-
-### Launch the software:
-
-1. Click on the <a href="https://github.com/maxencebonamy/Sand-Box/releases" target="_blank">Releases</a> button on the right and select the **latest version**.
-2. Download the **.zip** archive and extract the files.
-3. Run the **.exe** executable.
-
-### Compile:
-
-> [!NOTE]
-> *Prerequisites:*
-> - [x] *Git must be installed on your computer. If not, <a href="https://git-scm.com/downloads" target="_blank">click here.</a>*
-> - [x] *Xmake must be installed on your computer, if not, <a href="https://xmake.io/#/getting_started?id=installation" target="_blank">click here.</a>*
-<br>
-
-1. **Clone** the repository on your computer. To do this, open a terminal in the folder of your choice and run the following command:
 ```
-git clone https://github.com/maxencebonamy/Sand-Box
+.
+├── assets/             Element icons and window icon
+├── src/
+│   ├── display/        Grid, selection bar and image rendering
+│   ├── elements/       One class per element
+│   │   └── states/     Base behaviors: solid, dust, liquid, gas
+│   ├── utils/          Vector2 and helpers
+│   ├── config.cpp      Window and grid settings
+│   └── main.cpp        Entry point and main loop
+└── xmake.lua           Build configuration
 ```
 
-2. **Navigate** inside the folder you've just cloned with the following command:
-```
+Every file in `src/` is a `.cpp` and `.h` pair. To add an element, create a class in `src/elements` that extends the base class of its state.
+
+## Prerequisites
+
+- [Git](https://git-scm.com/downloads)
+- [Xmake](https://xmake.io/#/getting_started?id=installation), which downloads SFML on the first build
+- A C++ compiler supported by Xmake
+
+## Installation
+
+```bash
+git clone git@github.com:maxencebonamy/Sand-Box.git
 cd Sand-Box
 ```
 
-3. **Compile** the project with the following command:
-```
+```bash
 xmake
 ```
 
-4. **Run** the executable with this command:
-```
+Prebuilt Windows executables are available on the [releases page](https://github.com/maxencebonamy/Sand-Box/releases).
+
+## Configuration
+
+There is no environment file. Settings are constants in [`src/config.cpp`](src/config.cpp), and the project must be rebuilt after a change.
+
+| Constant | Description | Value |
+| --- | --- | --- |
+| `WINDOW_TITLE` | Window title | `SandBox` |
+| `WINDOW_FPS` | Frame rate limit | `120` |
+| `WINDOW_SIZE` | Window size, in pixels | `1600 x 900` |
+| `WINDOW_FULLSCREEN` | Fullscreen mode | `false` |
+| `CELL_SIZE` | Side of a cell, in pixels | `5` |
+
+## Running locally
+
+```bash
 xmake run
 ```
 
-<br>
+The working directory is the repository root, because the executable loads images from `assets/`.
 
-<p align="center">
-	<img src="https://github.com/maxencebonamy/maxencebonamy/blob/main/assets/3_Features.png" width="100%" alt="Features">
-</p>
+## Useful scripts
 
-### Actions you can perform in the software:
-- Hold down the left click and move your mouse to place elements on the window.
-- Right-click to show or hide the selection bar for the current element.
-- If the element selection bar is displayed, simply left-click on an element to select it.
+| Command | Effect |
+| --- | --- |
+| `xmake` | Build the project |
+| `xmake run` | Run the executable |
+| `xmake f -m release` | Switch to a release build |
+| `xmake f -m debug` | Switch to a debug build |
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
